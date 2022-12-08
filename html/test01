@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang= "ko">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather API</title>
+
+</body>
+    <h2>current weather</h2>
+    <h3 class="ctemp"> current temp:</h3>
+    <h3 class="lowtemp"> low temp:</h3>
+    <h3 class="hightemp"> hight temp:</h3>
+    <h3 class="icon"></h3>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" 
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+    crossorigin="anonymous"></script>
+
+    <script>
+        $getJSON(‘http://api.openweathermap.org/data/2.5/weather?q= Busan&
+        appid=9e1b402edadac300a736aaadf21f2e56&units=metric’,
+        function(
+            result){
+            $('.ctemp').append(result.main.temp);
+            $('.lowtemp').append(result.main.temp_min);
+            $('.hightemp').append(result.main.temp_max);
+        
+        });
+
+    </script>
+
+</body>
+
+</html>
+
+
